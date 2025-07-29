@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML (HTML5) -->
+
+<html lang="en">
+<!-- Root element of the HTML document. 'lang="en"' helps screen readers and search engines know the language -->
+
+<head>
+  <!-- Contains meta-information about the web page (not visible on the page) -->
+
+  <meta charset="UTF-8">
+  <!-- Sets the character encoding so your page supports special characters -->
+
+  <meta name="description" content="A beginner-friendly, accessible, and SEO-optimized HTML5 page.">
+  <!-- A short description for search engines and social sharing -->
+
+  
+  <!-- Ensures the layout works on mobile devices (responsive design) -->
+
+  <title>Accessible & SEO-Friendly Web Page</title>
+  <!-- The title that appears in the browser tab -->
+</head>
+
+<body>
+  <!-- All visible content on the page goes inside the <body> -->
+
+  <header>
+    <!-- The top of the page. Often contains a title/logo and navigation -->
+
+    <h1>Learn HTML5: Accessibility & SEO Basics</h1>
+    <!-- The main heading of the page. Use only one <h1> per page -->
+
+    <nav aria-label="Main navigation">
+      <!-- Navigation section. 'aria-label' helps screen readers understand the purpose -->
+
+      <ul>
+        <!-- Unordered list for the navigation links -->
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#tips">HTML5 Tips</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Main content of the page. Should be unique to this page -->
+
+    <article>
+      <!-- A self-contained section. Often used for blog posts, articles, or main pieces of content -->
+
+      <section id="intro">
+        <!-- A section for the introduction. 'id' is used for linking in navigation -->
+
+        <h2>Introduction to Semantic HTML5</h2>
+        <!-- Secondary heading (after h1). Headings must follow a logical order -->
+
+        <p>
+          HTML5 provides semantic tags like 
+          <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> 
+          to improve readability and accessibility of web pages.
+        </p>
+        <!-- A paragraph explaining semantic tags -->
+
+        <img src="download.png" alt="HTML5 Logo" />
+        <!-- Image with alt text for accessibility (important for screen readers) -->
+      </section>
+
+      <section id="tips">
+        <!-- Another section for listing accessibility tips -->
+
+        <h2>Top Tips for Accessibility</h2>
+        <!-- Proper use of heading hierarchy again -->
+
+        <ul>
+          <!-- Unordered list of tips -->
+          <li>Use proper heading hierarchy.</li>
+          <li>Add alt text to all images.</li>
+          <li>Use semantic tags instead of generic containers.</li>
+        </ul>
+      </section>
+
+      <aside>
+        <!-- Content that's related but not essential to the main article -->
+        <h2>Did You Know?</h2>
+        <p>
+          Search engines favor well-structured HTML for better ranking and user experience.
+        </p>
+      </aside>
+    </article>
+  </main>
+
+  <footer>
+    <!-- Bottom section of the page. Usually contains contact info, copyright -->
+
+    <section id="contact">
+      <!-- A section for contact information -->
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:daveozillahm@gmail.com">daveozillahm@gmail.com</a></p>
+      <p>Follow me on <a href="https://x.com/DaveOchieng3" target="_blank">@X</a> for more tips!</p>
+      <!-- Clickable email link -->
+
+      <p>&copy; Dave O'Zillahm</p>
+      <!-- Copyright symbol -->
+    </section>
+  </footer>
+
+</body>
+</html>
