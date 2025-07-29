@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🎨 Embedded CSS for sleek form styling -->
+  <style>
+    /* Global base styles */
+    body {
+      font-family: sans-serif;
+      background: #f4f7fa;
+      padding: 40px;
+      background-color: aquamarine;
+    }
+
+    /* Form container styling */
+    form {
+      background: rgb(212, 205, 205);
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Label styles */
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* Input and textarea shared styles */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* ✅ Valid input gets a green border */
+    input:valid {
+      border-color: #2ecc71;
+    }
+
+    /* ❌ Invalid input gets a red border */
+    input:invalid {
+      border-color: #e74c3c;
+    }
+
+    /* Submit button styling */
+    button {
+      margin-top: 20px;
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #b92995;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🧠 Title for the form -->
+  <h2 style="text-align:center;">🧠 Smart User Profile Form</h2>
+
+  <!-- ✅ HTML5 Form starts here -->
+  <form>
+    
+    <!-- Full Name: letters and spaces only -->
+    <label for="name">Full Name (letters only)</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      pattern="[A-Za-z\s]+"
+      title="Letters and spaces only"
+    >
+
+    <!-- Email input: built-in email format validation -->
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+    >
+
+    <!-- Phone input: must be exactly 10 digits -->
+    <label for="phone">Phone Number (10 digits)</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      required
+      pattern="\d{10}"
+      title="Enter 10 digits only (no dashes or spaces)"
+    >
+
+    <!-- Password with regex for 1 uppercase, 1 lowercase, 1 number, and min 8 chars -->
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      title="Must be at least 8 characters, with 1 uppercase, 1 lowercase, and 1 number"
+    >
+
+    <!-- URL input: checks for a valid web address -->
+    <label for="website">Personal Website</label>
+    <input
+      type="url"
+      id="website"
+      name="website"
+      placeholder="https://example.com"
+      optional
+    >
+
+    <!-- Age input: number between 13 and 120 -->
+    <label for="age">Age (13 to 120)</label>
+    <input
+      type="number"
+      id="age"
+      name="age"
+      required
+      min="13"
+      max="120"
+    >
+
+    <!-- Optional bio: max 200 characters -->
+    <label for="bio">Short Bio (max 200 chars)</label>
+    <textarea
+      id="bio"
+      name="bio"
+      maxlength="200"
+      placeholder="Tell us something interesting..."
+    ></textarea>
+
+    <!-- Submit button -->
+    <button type="submit">Submit Profile</button>
+  </form>
+
+</body>
+</html>

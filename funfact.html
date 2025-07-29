@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Fact Rotator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h2 {
+      text-decoration: underline;
+      font-weight: bold;
+      color: #dd1515;
+      font-size: 30px;
+    }
+
+    #fact-box {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>💡 Fun Fact</h2>
+  <div id="fact-box">Loading fun facts...</div>
+
+  <script>
+    // Array of fun facts
+    const facts = [
+      "🦩 A group of flamingos is called a 'flamboyance'.",
+      "🍌 Bananas are technically berries, but strawberries aren’t.",
+      "💙 Octopuses have three hearts and blue blood.",
+      "🍯 Honey never spoils — archaeologists found 3,000-year-old honey that's still edible.",
+      "🐌 A snail can sleep for up to 3 years.",
+      "🚀 The first email was sent in 1971 by Ray Tomlinson to himself.",
+      "🎮 The Konami Code (↑↑↓↓←→←→BA) is hidden in tons of video games.",
+      "🌈 Rainbows are actually full circles — we just see half of them from the ground."
+    ];
+
+    let currentFact = 0;
+    const factBox = document.getElementById('fact-box');
+
+    // Function to rotate facts
+    function showNextFact() {
+      factBox.textContent = facts[currentFact];
+      currentFact = (currentFact + 1) % facts.length; // Loop back to start
+    }
+
+    // Initial display
+    showNextFact();
+
+    // Change fact every 5 seconds
+    setInterval(showNextFact, 5000);
+  </script>
+
+</body>
+</html>

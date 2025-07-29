@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="A fun HTML page with a pricing table, creative lists, and accessible images.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FunZone: Compare, Discover, Laugh!</title>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Welcome to FunZone!</h1>
+    <p>We compare stuff, list cool ideas, and show off pictures — all in one HTML5 page!</p>
+  </header>
+
+  <main>
+
+    <!-- Pricing / Comparison Table -->
+    <section>
+      <h2>📦 Choose Your Adventure Pack</h2>
+      <table border="1">
+        <caption>Adventure Pack Comparison</caption>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Basic Pack</th>
+            <th>Epic Pack</th>
+            <th>Legendary Pack</th>
+          </tr>
+        </thead>
+        
+          <tr>
+            <td>Included Days</td>
+            <td>2</td>
+            <td>5</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Snacks</td>
+            <td>🍪 Cookies</td>
+            <td>🍕 Pizza</td>
+            <td>🦞 Lobster</td>
+          </tr>
+          <tr>
+            <td>Transport</td>
+            <td>🚶 Walking</td>
+            <td>🚲 Bicycle</td>
+            <td>🚁 Helicopter</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>$99</td>
+            <td>$199</td>
+            <td>$499</td>
+          </tr>
+        
+      </table>
+    </section>
+
+    <!-- Creative List 1: Top 5 Weird Superpowers -->
+    <section>
+      <h2>🦸‍♂️ Top 5 Weird Superpowers</h2>
+      <ol type="a">
+        <li>Speak fluent dolphin 🐬</li>
+        <li>Control traffic lights with a blink 🚦</li>
+        <li>Instantly toast bread by staring 🍞</li>
+        <li>Summon cats with a whistle 🐱</li>
+        <li>Turn invisible... but only when no one is watching 🙈</li>
+      </ol>
+    </section>
+
+    <!-- Creative List 2: Top 4 Things You Should Never Microwave -->
+    <section>
+      <h2>⚠️ Never Microwave These!</h2>
+      <ul type="square">
+        <li>CDs 💿 (sparks will fly... literally)</li>
+        <li>Grapes 🍇 (mini fireballs!)</li>
+        <li>Whole eggs 🥚 (kaboom!)</li>
+        <li>Metal forks 🍴 (unless you're summoning Thor)</li>
+      </ul>
+    </section>
+
+    <!-- Images Section -->
+    <section>
+      <h2>📸 Epic Gallery</h2>
+      <figure>
+        <img src="images (3).jpg" alt="A cat in a space helmet floating in zero gravity" width="300">
+        <figcaption>Space Cat Commander 🐱🚀</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images.jpg" alt="A ridiculously oversized burger stacked with multiple patties and cheese" width="300">
+        <figcaption>The Ultimate Cheat Meal 🍔</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images (2).jpg" alt="A cozy coding setup with fairy lights and dual monitors" width="300">
+        <figcaption>The Developer's Dream Den 💻✨</figcaption>
+      </figure>
+    </section>
+
+  </main>
+  <h2 aria-flowto="schedule" id="schedule" style="font-size: 30px;color: blue;">Simple schedule</h2>
+  <table border="1" style="width: 50%; text-align: center; background-color: antiquewhite;">
+    <tr>
+      <th colspan="2">Schedule</th>
+    
+        <th>Activity</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td>9:00 AM</td>
+      <td>Team Meeting</td>
+      <td>Conference Room A</td>
+    </tr>
+    <tr>
+        <td>Tuesday</td>
+        <td>11:00 AM</td>
+        <td>Project Kickoff</td>
+        <td>Zoom</td>
+    </tr>
+    <tr>
+        <td>Wednesday</td>
+        <td>1:00 PM</td>
+        <td>Design Review</td>
+        <td>Conference Room B</td>
+    </tr>
+    <tr>
+        <td>Thursday</td>
+        <td>3:00 PM</td>
+        <td>Client Call</td>
+        <td>Zoom</td>
+    </tr>
+    <tr>
+        <td>Friday</td>
+        <td>10:00 AM</td>
+        <td>Weekly Wrap-up</td>
+        <td>Conference Room A</td>
+    </tr>
+    <tr>
+        <td>Saturday</td>
+        <td>2:00 PM</td>
+        <td>Team Building Activity</td>
+        <td>Park</td>
+    </tr>
+    <tr>
+        <td>Sunday</td>
+        <td>Rest Day</td>
+        <td>Relax and Recharge</td>
+        <td>Anywhere!</td>
+    </tr>
+  </table>
+    <aside>
+        <h2 style="text-decoration: underline; font-weight: bold; color: #dd1515; font-size: 30px; "><marquee style="animation: alternate 10s linear infinite;">💡 Fun Fact</marquee></h2>
+        <p>Did you know? The first computer bug was a real moth found in a computer in 1947!</p>
+<h5 style="color: #dd1515; font-size: 20px;">🎵 Enjoy this song while you browse:</h5>
+        <audio controls>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+    </aside>
+  <footer>
+    <p>&copy; 2025 FunZone. Made with ❤️ and pure HTML5.</p>
+  </footer>
+ <h2>💡 Fun Fact</h2>
+  <div id="fact-box">Loading fun facts...</div>
+
+  <script>
+    // Array of fun facts
+    const facts = [
+      "🦩 A group of flamingos is called a 'flamboyance'.",
+      "🍌 Bananas are technically berries, but strawberries aren’t.",
+      "💙 Octopuses have three hearts and blue blood.",
+      "🍯 Honey never spoils — archaeologists found 3,000-year-old honey that's still edible.",
+      "🐌 A snail can sleep for up to 3 years.",
+      "🚀 The first email was sent in 1971 by Ray Tomlinson to himself.",
+      "🎮 The Konami Code (↑↑↓↓←→←→BA) is hidden in tons of video games.",
+      "🌈 Rainbows are actually full circles — we just see half of them from the ground."
+    ];
+
+    let currentFact = 0;
+    const factBox = document.getElementById('fact-box');
+
+    // Function to rotate facts
+    function showNextFact() {
+      factBox.textContent = facts[currentFact];
+      currentFact = (currentFact + 1) % facts.length; // Loop back to start
+    }
+
+    // Initial display
+    showNextFact();
+
+    // Change fact every 5 seconds
+    setInterval(showNextFact, 5000);
+  </script>
+
+</body>
+</html>

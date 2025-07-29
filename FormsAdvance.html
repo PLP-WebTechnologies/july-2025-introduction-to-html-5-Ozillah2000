@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Form with Live Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #34495e;
+    }
+
+    form, .preview {
+      background: white;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input:invalid {
+      border-color: #e74c3c;
+    }
+
+    input:valid {
+      border-color: #2ecc71;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 0.9em;
+      margin-top: 3px;
+      display: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1f6391;
+    }
+
+    .preview h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .preview p {
+      margin: 10px 0;
+    }
+
+    .field {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🧠 Smart Form with Live Preview & Custom Errors</h2>
+
+  <form id="smartForm" novalidate>
+    <!-- NAME -->
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required pattern="[A-Za-z\s]+" title="Letters and spaces only" />
+    <div class="error" id="nameError">Please enter a valid name (letters only).</div>
+
+    <!-- EMAIL -->
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
+    <div class="error" id="emailError">Enter a valid email address.</div>
+
+    <!-- PHONE -->
+    <label for="phone">Phone (10 digits)</label>
+    <input type="tel" id="phone" required pattern="\d{10}" />
+    <div class="error" id="phoneError">Enter 10 digits (no spaces or dashes).</div>
+
+    <!-- BIO -->
+    <label for="bio">Short Bio (max 100 chars)</label>
+    <textarea id="bio" maxlength="100" placeholder="Tell us about yourself..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- 🔍 Real-time live preview panel -->
+  <div class="preview">
+    <h3>🔍 Live Preview</h3>
+    <p><strong>Name:</strong> <span id="prevName">-</span></p>
+    <p><strong>Email:</strong> <span id="prevEmail">-</span></p>
+    <p><strong>Phone:</strong> <span id="prevPhone">-</span></p>
+    <p><strong>Bio:</strong> <span id="prevBio">-</span></p>
+  </div>
+
+  <script>
+    // 🔁 Live update preview fields
+    const fields = ["name", "email", "phone", "bio"];
+    fields.forEach(id => {
+      document.getElementById(id).addEventListener("input", function () {
+        document.getElementById("prev" + id.charAt(0).toUpperCase() + id.slice(1)).textContent = this.value || "-";
+      });
+    });
+
+    // ❌ Custom error display logic
+    const form = document.getElementById("smartForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop actual form submission
+
+      let valid = true;
+
+      // Validate each field
+      fields.forEach(id => {
+        const input = document.getElementById(id);
+        const error = document.getElementById(id + "Error");
+
+        if (!input.checkValidity()) {
+          error.style.display = "block";
+          valid = false;
+        } else {
+          error.style.display = "none";
+        }
+      });
+
+      // ✅ All valid?
+      if (valid) {
+        alert("🎉 Form submitted successfully!");
+        form.reset();
+        fields.forEach(id => {
+          document.getElementById("prev" + id.charAt(0).toUpperCase() + id.slice(1)).textContent = "-";
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

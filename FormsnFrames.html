@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms & Frames Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+header, footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+h1, h2 {
+  color: #2c3e50;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+</style>
+
+</head>
+<body>
+
+  <h1>📋 HTML Forms & Frames Playground</h1>
+
+  <!-- 1. Login Form -->
+  <section>
+    <h2>🔐 Login Form</h2>
+    <form>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" placeholder="you@example.com" required>
+
+      <label for="login-pass">Password</label>
+      <input type="password" id="login-pass" placeholder="•••••••" required>
+
+      <input type="submit" value="Login">
+    </form>
+  </section>
+
+  <!-- 2. Registration Form -->
+  <section>
+    <h2>📝 Registration Form</h2>
+    <form>
+      <label for="reg-name">Full Name</label>
+      <input type="text" id="reg-name" required>
+
+      <label for="reg-username">Username</label>
+      <input type="text" id="reg-username" required>
+
+      <label for="reg-email">Email</label>
+      <input type="email" id="reg-email" required>
+
+      <label for="reg-password">Password</label>
+      <input type="password" id="reg-password" required>
+
+      <label for="reg-age">Age</label>
+      <input type="number" id="reg-age" min="13">
+
+      <input type="submit" value="Register">
+    </form>
+  </section>
+
+  <!-- 3. Contact Form -->
+  <section>
+    <h2>📨 Contact Us</h2>
+    <form>
+      <label for="contact-name">Name</label>
+      <input type="text" id="contact-name" required>
+
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" required>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" rows="4" required></textarea>
+
+      <input type="submit" value="Send Message">
+    </form>
+  </section>
+
+  <!-- 4. Feedback Form -->
+  <section>
+    <h2>⭐ Feedback Form</h2>
+    <form>
+      <label>Rate Us:</label>
+      <input type="radio" name="rating" value="1"> 1
+      <input type="radio" name="rating" value="2"> 2
+      <input type="radio" name="rating" value="3"> 3
+      <input type="radio" name="rating" value="4"> 4
+      <input type="radio" name="rating" value="5"> 5
+
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" rows="3"></textarea>
+
+      <input type="submit" value="Submit Feedback">
+    </form>
+  </section>
+
+  <!-- 5. Newsletter Signup -->
+  <section>
+    <h2>📧 Newsletter Signup</h2>
+   <form onsubmit="saveNewsletter(event)">
+  <label for="news-email">Email Address</label>
+  <input type="email" id="news-email" required>
+  <input type="submit" value="Subscribe">
+</form>
+
+  </section>
+
+  <!-- 6. Job Application Form -->
+  <section>
+    <h2>💼 Job Application</h2>
+    <form>
+      <label for="job-name">Full Name</label>
+      <input type="text" id="job-name">
+
+      <label for="job-resume">Upload Resume</label>
+      <input type="file" id="job-resume">
+
+      <label for="job-position">Position</label>
+      <select id="job-position">
+        <option value="dev">Web Developer</option>
+        <option value="design">Graphic Designer</option>
+        <option value="pm">Project Manager</option>
+      </select>
+
+      <input type="submit" value="Apply Now">
+    </form>
+  </section>
+
+  <!-- 7. Search Bar -->
+  <section>
+    <h2>🔍 Search</h2>
+    <form>
+      <label for="search-query">What are you looking for?</label>
+      <input type="search" id="search-query" placeholder="Search...">
+      <input type="submit" value="Go">
+    </form>
+  </section>
+
+  <!-- 8. Survey Form -->
+  <section>
+    <h2>📊 Quick Survey</h2>
+    <form>
+      <label>Which device do you use most?</label>
+      <select>
+        <option>Smartphone</option>
+        <option>Laptop</option>
+        <option>Tablet</option>
+        <option>Desktop PC</option>
+      </select>
+
+      <label>What features do you like?</label>
+      <input type="checkbox"> Fast loading<br>
+      <input type="checkbox"> Simple design<br>
+      <input type="checkbox"> Dark mode<br>
+
+      <input type="submit" value="Submit Survey">
+    </form>
+  </section>
+
+  <!-- FRAMES SECTION -->
+
+  <!-- 1. Inline Frame (iFrame) -->
+  <section>
+    <h2>🌐 Embedded Google Map (iframe)</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509076!2d144.95592831531694!3d-37.8172099797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5770b8cc43d34b7!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1647342976247!5m2!1sen!2sau"
+      width="100%" height="250" allowfullscreen="" loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 2. Old-School Frameset (for reference only) -->
+  <section>
+    <h2>🧾 Legacy Frameset Example (Not Supported in Modern Browsers)</h2>
+    <p><strong>Note:</strong> The `<frameset>` element is deprecated and no longer supported in HTML5. It used to split the window into frames. Here's a sample (not live):</p>
+
+    <pre>
+&lt;frameset cols="50%,50%"&gt;
+  &lt;frame src="left.html"&gt;
+  &lt;frame src="right.html"&gt;
+&lt;/frameset&gt;
+    </pre>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Forms & Frames Playground</p>
+  </footer>
+
+</body>
+<script>
+  function saveNewsletter(e) {
+    e.preventDefault(); // Stop form from submitting
+
+    const email = document.getElementById("news-email").value;
+
+    // Save to localStorage
+    let subs = JSON.parse(localStorage.getItem("subscribers")) || [];
+    subs.push(email);
+    localStorage.setItem("subscribers", JSON.stringify(subs));
+
+    alert("Thanks for subscribing! (Saved locally)");
+    e.target.reset(); // Clear form
+  }
+</script>
+
+</html>
